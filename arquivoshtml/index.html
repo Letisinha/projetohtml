@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        src="./jquery-3.6.4.min"
+        src="./main.js"
+    </script>
     <title>Consulta CEP</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
@@ -19,12 +22,18 @@
                <label for="phone">Telefone</label>
                <input type="text" class="form-control" maxlength="15" id="phone">
                <small>Telefone</small>               
+            <div class="form-group">
+                <label for="mail">Email</label>
+                <input type="text" class="form-control" maxlength="40" id="mail">
+                <small>E-mail</small>  
+            </div>
             </div>
             <div class="form-group">
                 <label for="cep">CEP</label>
                 <input type="text" class="form-control" maxlength="9" id="cep">
                 <small>00000-000</small>
-                 
+
+                <button type="button" id="submit" class="btn" type="submit" onclick="buscarCep()">Buscar</button>
             </div>
             <div class="form-group">
                 <label for="logradouro">Endereço</label>
@@ -45,11 +54,18 @@
                 <label for="uf">UF</label>
                 <input type="text" class="form-control" id="uf">
                 <small>Estado</small>
+            <div class="form-group">
+                <label for="complemento">Complemento</label>
+                <input type="text" class="form-control" id="complemento">
+                <small>Complemento</small>
             </div>
-            <button type="enviar" class="btn">Enviar</button>
+            <div class="selection">
+                <label for="tipo_cliente">Selecione o tipo de cliente:</label>
+                <select id="tipo_cliente" name="tipo"></select>
+            </div>
+            <button type="submit" class="btn" id="subform" onclick="sendForm()">Enviar</button>
         </form>
     </div>
-    <script src="./main.js"></script>
-
+    
 </body>
 </html>
